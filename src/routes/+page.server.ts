@@ -9,6 +9,6 @@ export const load = ({ platform }) => {
 		new m.PayloadSDK({ baseURL: `${platform.env.PUBLIC_PAYLOAD_ORIGIN}/api` })
 			.findGlobal({ slug: platform.env.PUBLIC_SLUG })
 			.then((result) => ({ result }))
-			.catch((e) => ({ result: e }))
+			.catch((e) => ({ result: e.message }))
 	);
 };

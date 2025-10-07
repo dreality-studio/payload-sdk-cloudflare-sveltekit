@@ -28,7 +28,7 @@ Connect to any existing Payload CMS that have a publicly available globals
 
 ## Step 4 - Test with local development
 
-Go to home page and expect the fetched data form Payload SDK to show on home page http://localhost:5173
+Go to http://localhost:5173 to see the fetched data from Payload SDK
 
 ```
 pnpm dev
@@ -36,21 +36,21 @@ pnpm dev
 
 ## Step 5 - Test with local built files
 
-Go to home page and expect the fetched data form Payload SDK to show on home page http://localhost:4173
+Go to http://localhost:4173 to see the fetched data from Payload SDK
 
 ```
 pnpm build
 pnpm preview
 ```
 
-## Step 6 - Test with production
+## Step 6 - Test with Wrangler
 
 ```
-wrangler deploy
+wrangler dev
 ```
 
-Since we enabled Observability in wrangler.jsonc so we can see the error in the Cloudflare dashboard. And there will be error message like this complaining about illegal invocation
+Go to http://localhost:8787 to see the fetched data from Payload SDK or the illegal invocation error message
 
 ```
-" [1;31m[500] GET /[0m TypeError: Illegal invocation: function called with incorrect `this` reference. See https://developers.cloudflare.com/workers/observability/errors/#illegal-invocation-errors for details. at PayloadSDK.request (_worker.js:3858:37) at findGlobal (_worker.js:3143:30) at PayloadSDK.findGlobal (_worker.js:3810:16) at _worker.js:3905:92 at async fn (_worker.js:8385:23) at async load_server_data (_worker.js:8376:18) at async _worker.js:10147:31"
+"Illegal invocation: function called with incorrect `this` reference. See https://developers.cloudflare.com/workers/observability/errors/#illegal-invocation-errors for details."
 ```
