@@ -1,0 +1,15 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "payload-sdk-cloudflare-sveltekit",
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"compatibility_date": "2025-10-07",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"assets": {
+		"directory": ".svelte-kit/cloudflare",
+		"binding": "ASSETS"
+	},
+	"vars": {
+		"PUBLIC_PAYLOAD_ORIGIN": "",
+		"PUBLIC_SLUG": ""
+	}
+}
